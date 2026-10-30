@@ -1,67 +1,59 @@
-TRACE — Transnational Darknet & Encrypted Commerce Examiner
-<p align="center">
-  <strong>AI-Assisted Digital Investigation & Cyber Forensics Platform</strong>
-</p><p align="center">
-  <img alt="Python" src="https://img.shields.io/badge/Python-3.x-blue">
-  <img alt="Backend" src="https://img.shields.io/badge/Backend-FastAPI-009688">
-  <img alt="Machine Learning" src="https://img.shields.io/badge/ML-scikit--learn-orange">
-  <img alt="Database" src="https://img.shields.io/badge/Database-SQLite-003B57">
-  <img alt="Interface" src="https://img.shields.io/badge/Frontend-HTML%20%7C%20CSS%20%7C%20JavaScript-E34F26">
-</p>TRACE is an AI-assisted digital investigation platform designed to organize and analyze suspicious online listings and related entities. It brings together text-based slang detection, vendor/entity linking, cryptocurrency transaction-flow analysis, alerts, and digital evidence integrity features in a unified web dashboard.
+<div align="center">
 
-The project uses demonstration and synthetic data to illustrate how multiple investigative signals can be reviewed together. It is a prototype and should not be treated as an operational law-enforcement system or as proof that an individual has committed a crime.
-Table of Contents
-- Problem Statement
-- Our Solution
-- Key Features
-- How It Works
-- System Architecture
-- Technology Stack
-- Machine Learning Approach
-- Project Structure
-- Getting Started
-- API Overview
-- Data, Privacy, and Limitations
-- Future Enhancements
-- Contributing
-- License
-Problem Statement
-Digital investigations may involve large amounts of unstructured text, multiple vendor profiles, cryptocurrency transactions, and evidence records. Reviewing each source separately can make it difficult to organize signals and identify relationships that may warrant further examination.
+# TRACE
 
-The challenge: How can text analysis, entity linking, transaction graphing, and evidence integrity tools be brought together in one investigation-support interface while keeping findings reviewable by a human investigator?
-Our Solution
-TRACE combines a web dashboard and Python-based analysis modules to help users explore investigation-related data in one place. The current prototype includes:
-1. Text analysis for potentially relevant slang and listing indicators.
-2. Listing and vendor records with filters and detail views.
-3. Entity-linking features to represent possible relationships between vendor profiles.
-4. Cryptocurrency wallet and transaction-flow analysis using available project data.
-5. Evidence capture and integrity-verification workflows.
-6. Watchlist management and dashboard alerts.
-7. Synthetic/demo data to support development and demonstrations.
-Key Features
-1. Text and Slang Analysis
-Uses a machine-learning pipeline and a slang lexicon to analyze submitted text and return indicators for further review. Model output is a signal, not a definitive classification of intent or illegal activity.
-2. Listing Review
-Provides listing records, detail endpoints, and filters such as source and minimum score to help users review relevant entries.
-3. Vendor and Entity Linking
-Organizes vendor profiles and possible links. The project includes text-style analysis and graph data generation to help visualize potential relationships; matches require independent verification.
-4. Cryptocurrency Wallet Analysis
-Provides wallet and transaction records, wallet-risk indicators, and fund-flow graph construction based on the data available to the application. This is not a direct blockchain intelligence feed unless separately connected to a verified data provider.
-5. Digital Evidence Locker
-Includes evidence capture, verification, and dossier-related functionality. Hash-based checks can help detect changes to stored evidence, but do not by themselves establish authenticity, lawful collection, or a complete chain of custody.
-6. Alerts and Watchlists
-Supports viewing dashboard alerts, marking alerts as read, and managing watchlist entries.
-7. Web Dashboard and REST API
-A FastAPI application serves the dashboard and API endpoints, with static CSS/JavaScript assets and Jinja2 HTML templates.
-How It Works
-1. Data input: The application loads records from its local database and can analyze text submitted through the interface/API.
-2. Text analysis: The slang detector combines its trained model and lexicon-based indicators.
-3. Entity review: Vendor and listing information is used to calculate or display possible links.
-4. Transaction review: Wallet and transaction records are organized into wallet details and fund-flow graphs.
-5. Evidence handling: Evidence records can be captured and checked through the evidence module.
-6. Dashboard presentation: Alerts, listings, vendors, wallet information, and other results are presented through the web interface.
-7. Human verification: Any findings should be checked against reliable independent sources before decisions are made.
-System Architecture
+### Transnational Darknet & Encrypted Commerce Examiner
+
+**An AI-assisted platform for digital investigation and cyber forensics research**
+
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688?logo=fastapi&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/ML-scikit--learn-F7931E?logo=scikitlearn&logoColor=white)
+![SQLite](https://img.shields.io/badge/Database-SQLite-003B57?logo=sqlite&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Prototype-yellow)
+
+</div>
+
+---
+
+> **Notice:** TRACE is a research prototype built on synthetic demonstration data. It is not an operational law-enforcement system, and its outputs must not be treated as proof that any individual or entity has committed a crime. See [Data, Privacy, and Limitations](#data-privacy-and-limitations).
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Key Features](#key-features)
+- [System Architecture](#system-architecture)
+- [Technology Stack](#technology-stack)
+- [Machine Learning Approach](#machine-learning-approach)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [API Reference](#api-reference)
+- [Data, Privacy, and Limitations](#data-privacy-and-limitations)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Overview
+
+Digital investigations often involve large volumes of unstructured text, multiple vendor profiles, cryptocurrency transactions, and evidence records. When each source is reviewed in isolation, it is difficult to correlate signals and identify relationships that merit closer examination.
+
+**TRACE** addresses this by consolidating text analysis, entity linking, transaction-flow graphing, and evidence-integrity tooling into a single web dashboard, while keeping every finding open to review by a human investigator.
+
+## Key Features
+
+| Capability | Description |
+|---|---|
+| **Text & Slang Analysis** | Combines a trained ML model with a slang lexicon to flag indicators in submitted text. Output is a review signal, not a determination of intent or illegality. |
+| **Listing Review** | Browse listings with detail views and filters such as source and minimum score. |
+| **Vendor & Entity Linking** | Organizes vendor profiles and generates graph data that visualizes possible relationships. Links require independent verification. |
+| **Cryptocurrency Analysis** | Wallet and transaction records, wallet-risk indicators, and fund-flow graphs built from data available to the application. Not a live blockchain-intelligence feed unless connected to a verified provider. |
+| **Digital Evidence Locker** | Evidence capture, hash-based verification, and vendor dossier generation. Hashing detects changes but does not establish authenticity, lawful collection, or chain of custody. |
+| **Alerts & Watchlists** | Dashboard alerts with read-state tracking, plus watchlist management. |
+| **Dashboard & REST API** | A FastAPI application serving a Jinja2/HTML/CSS/JavaScript dashboard and a documented JSON API. |
+
+## System Architecture
+
+```
                  Investigator / Analyst
                           |
                           v
@@ -73,7 +65,7 @@ System Architecture
           +---------------+----------------+
           |               |                |
           v               v                v
-     Slang/Text       Entity Linking   Crypto Tracer
+     Slang / Text     Entity Linking   Crypto Tracer
       Detector                         & Fund Flow
           |               |                |
           +---------------+----------------+
@@ -86,24 +78,37 @@ System Architecture
                           |
                           v
                 Dashboard Results & Alerts
-Technology Stack
-Component	Technologies
-Programming Language	Python
-Backend / REST API	FastAPI
-ASGI Server	Uvicorn
-HTML Templates	Jinja2
-Frontend	HTML5, CSS3, JavaScript
-Machine Learning	scikit-learn, TF-IDF, LinearSVC, calibrated classifier
-Numerical Processing	NumPy, SciPy
-Database	SQLite (sqlite3)
-Data Formats	JSON, JSONL, CSV
-Evidence Integrity	Hash-based verification (implemented in the evidence module)
+```
 
+**Workflow**
 
-Machine Learning Approach
-The repository includes a model-training module for text/slang detection. The code uses a TF-IDF text representation and a LinearSVC-based classifier with calibration support, alongside a lexicon-based component.
+1. **Input** – Records are loaded from the local database; text can be submitted via the UI or API.
+2. **Text analysis** – The detector combines model predictions with lexicon matches.
+3. **Entity review** – Vendor and listing data are used to compute and display possible links.
+4. **Transaction review** – Wallet and transaction records are assembled into wallet details and fund-flow graphs.
+5. **Evidence handling** – Evidence is captured and verified through the evidence module.
+6. **Presentation** – Alerts, listings, vendors, and wallet data are surfaced in the dashboard.
+7. **Human verification** – All findings must be checked against reliable, independent sources before any decision is made.
 
-A typical development workflow is:
+## Technology Stack
+
+| Layer | Technologies |
+|---|---|
+| Language | Python |
+| Backend / API | FastAPI, Uvicorn (ASGI) |
+| Templating | Jinja2 |
+| Frontend | HTML5, CSS3, JavaScript |
+| Machine Learning | scikit-learn (TF-IDF, LinearSVC, calibrated classifier) |
+| Numerical Processing | NumPy, SciPy |
+| Database | SQLite (`sqlite3`) |
+| Data Formats | JSON, JSONL, CSV |
+| Evidence Integrity | Hash-based verification |
+
+## Machine Learning Approach
+
+The slang-detection module uses a TF-IDF text representation with a calibrated LinearSVC classifier, complemented by a lexicon-based component.
+
+```
 Synthetic / Labeled Text Data
             |
             v
@@ -123,109 +128,188 @@ Synthetic / Labeled Text Data
             |
             v
    Indicators for Review
-The included data is synthetic/demo data. Model performance on synthetic examples does not establish accuracy on real-world content. Before any real-world use, evaluate with appropriately collected and labeled data, document false-positive/false-negative rates, and conduct ongoing bias and drift checks.
-Project Structure
+```
+
+> **Important:** The bundled data is synthetic. Performance on synthetic examples does not indicate accuracy on real-world content. Before any real-world use, evaluate on appropriately collected and labeled data, document false-positive and false-negative rates, and perform ongoing bias and drift monitoring.
+
+## Project Structure
+
+```
 TRACE-main/
-├── app.py                           # FastAPI application and API routes
-├── run.bat                          # Windows startup helper
-├── generate_synthetic_dataset.py    # Synthetic dataset generation
+├── app.py                              # FastAPI application and API routes
+├── run.bat                             # Windows startup helper
+├── generate_synthetic_dataset.py       # Synthetic dataset generation
+├── trace.db                            # Local SQLite database (demo data)
 ├── data/
-│   ├── slang_lexicon.json           # Slang/indicator lexicon
+│   ├── slang_lexicon.json              # Slang / indicator lexicon
 │   ├── synthetic_drug_slang_dataset.json
 │   └── synthetic_drug_slang_dataset.jsonl
 ├── models/
-│   ├── database.py                  # SQLite persistence and queries
-│   ├── slang_detector.py            # Text/slang analysis
-│   ├── train_slang_model.py         # Model training and evaluation
-│   ├── slang_model.pkl              # Serialized model artifact
-│   ├── entity_linker.py             # Vendor/entity linking
-│   ├── crypto_tracer.py             # Wallet and transaction-flow analysis
-│   ├── evidence_locker.py           # Evidence capture/verification
-│   └── data_generator.py            # Demo data generation
+│   ├── database.py                     # SQLite persistence and queries
+│   ├── slang_detector.py               # Text / slang analysis
+│   ├── train_slang_model.py            # Model training and evaluation
+│   ├── slang_model.pkl                 # Serialized model artifact
+│   ├── entity_linker.py                # Vendor / entity linking
+│   ├── crypto_tracer.py                # Wallet and transaction-flow analysis
+│   ├── evidence_locker.py              # Evidence capture and verification
+│   └── data_generator.py               # Demo data generation
 ├── templates/
-│   └── index.html                   # Dashboard page
-├── static/
-│   ├── css/style.css                # Dashboard styles
-│   └── js/app.js                    # Frontend behavior
-└── trace.db                         # Local SQLite database (demo data)
-Getting Started
-Prerequisites
-- Python 3.10 or newer recommended.
-- pip and a terminal.
-- A modern web browser.
-1. Clone the Repository
-Replace the repository URL below with your actual TRACE GitHub URL:
+│   └── index.html                      # Dashboard page
+└── static/
+    ├── css/style.css                   # Dashboard styles
+    └── js/app.js                       # Frontend behavior
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.10 or newer
+- `pip`
+- A modern web browser
+
+### 1. Clone the repository
+
+```bash
 git clone <YOUR-TRACE-REPOSITORY-URL>
 cd TRACE-main
-2. Create a Virtual Environment
-Windows PowerShell:
+```
+
+### 2. Create and activate a virtual environment
+
+**Windows (PowerShell)**
+```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
-Windows Command Prompt:
+```
+
+**Windows (Command Prompt)**
+```bat
 python -m venv .venv
 .venv\Scripts\activate.bat
-macOS/Linux:
+```
+
+**macOS / Linux**
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
-3. Install Dependencies
-The uploaded project archive does not include a requirements.txt file. Install the primary runtime and machine-learning dependencies in the activated environment:
+```
+
+### 3. Install dependencies
+
+```bash
 python -m pip install fastapi uvicorn jinja2 numpy scipy scikit-learn
-If an import error identifies another required package, install it in the virtual environment and add the confirmed dependency to a requirements.txt file for reproducible setup.
-4. Run the Application
-From the project root, run:
+```
+
+> The repository does not currently include a `requirements.txt`. If you encounter an import error for another package, install it and add it to a `requirements.txt` for reproducible setups. Note that `run.bat` expects this file to exist.
+
+### 4. Run the application
+
+```bash
 uvicorn app:app --host 127.0.0.1 --port 8000
-Then open http://127.0.0.1:8000 in your browser. Interactive API documentation is available at http://127.0.0.1:8000/docs.
+```
 
-On Windows, run.bat is also included as a startup helper, but it expects a requirements.txt file; use the manual installation steps above if that file is not present in your checkout.
-API Overview
-The FastAPI application exposes endpoints including:
-Method	Endpoint	Purpose
-GET	/api/dashboard/stats	Retrieve dashboard statistics
-GET	/api/dashboard/alerts	List alerts with optional filtering
-GET	/api/dashboard/alert-counts	Retrieve alert counts
-POST	/api/dashboard/alerts/{alert_id}/read	Mark an alert as read
-GET	/api/listings	List/filter listing records
-GET	/api/listings/{listing_id}	Retrieve a listing
-POST	/api/analyze	Analyze submitted text
-GET	/api/vendors	List/filter vendors
-GET	/api/vendors/{vendor_id}	Retrieve vendor details and related records
-GET	/api/vendors/graph/data	Generate vendor graph data
-GET	/api/crypto/wallets	List wallet records
-GET	/api/crypto/wallet/{address}	Retrieve wallet details and analysis
-GET	/api/crypto/flow/{address}	Build a wallet fund-flow graph
-GET	/api/crypto/transactions	List transaction records
-GET	/api/crypto/risk/{address}	Retrieve the configured wallet risk assessment
-GET	/api/evidence	List evidence records
-POST	/api/evidence/capture	Capture an evidence record
-POST	/api/evidence/verify/{evidence_id}	Verify an evidence record
-GET	/api/evidence/dossier/{vendor_id}	Generate a vendor-related dossier response
-GET	/api/watchlist	List watchlist entries
-POST	/api/watchlist	Add a watchlist entry
-DELETE	/api/watchlist/{watchlist_id}	Remove a watchlist entry
-GET	/api/slang/drift	Review slang drift records/status
-POST	/api/slang/analyze	Run slang analysis
-GET	/api/slang/lexicon	Retrieve the configured lexicon
+| Resource | URL |
+|---|---|
+| Dashboard | http://127.0.0.1:8000 |
+| Interactive API docs | http://127.0.0.1:8000/docs |
 
+## API Reference
 
-Use /docs while the server is running to inspect the request and response schemas.
-Data, Privacy, and Limitations
-- The project contains synthetic/demo data and a local SQLite database. Review all records before publishing or sharing the repository.
-- Do not commit real personal data, confidential case information, credentials, API keys, or private evidence.
-- Treat machine-learning scores, slang matches, entity links, and wallet risk outputs as investigative leads—not proof of wrongdoing.
-- Entity matches can be coincidental, text can be ambiguous, and the included wallet analysis operates on the data available to the application.
-- Hash verification can help detect changes but does not independently prove evidence authenticity or legal admissibility.
-- The prototype is not a substitute for validated forensic procedures, legal review, or human investigation.
-- Restrict access and use only lawfully obtained data in any authorized testing or deployment.
-Future Enhancements
-Potential improvements include:
-- Add a maintained requirements.txt and automated tests.
-- Add authentication, role-based authorization, and audit logging.
-- Improve model evaluation with carefully governed and representative datasets.
-- Add explainability details and clear confidence/uncertainty reporting.
-- Add stronger evidence metadata, timestamps, and auditable custody events.
-- Connect to verified data providers only where authorized and technically implemented.
-- Improve database migrations, backup procedures, and deployment hardening.
-- Add dashboard screenshots and a reproducible demo walkthrough.
-These are proposed enhancements, not claims that they are already implemented.
-Contributing
-Contributions, bug reports, and suggestions are welcome. For changes, create a branch, document the purpose of the change, and test the affected functionality before opening a pull request.
+Full request and response schemas are available at `/docs` while the server is running.
+
+**Dashboard**
+
+| Method | Endpoint | Purpose |
+|---|---|---|
+| GET | `/api/dashboard/stats` | Retrieve dashboard statistics |
+| GET | `/api/dashboard/alerts` | List alerts with optional filtering |
+| GET | `/api/dashboard/alert-counts` | Retrieve alert counts |
+| POST | `/api/dashboard/alerts/{alert_id}/read` | Mark an alert as read |
+
+**Listings & Analysis**
+
+| Method | Endpoint | Purpose |
+|---|---|---|
+| GET | `/api/listings` | List and filter listings |
+| GET | `/api/listings/{listing_id}` | Retrieve a listing |
+| POST | `/api/analyze` | Analyze submitted text |
+
+**Vendors**
+
+| Method | Endpoint | Purpose |
+|---|---|---|
+| GET | `/api/vendors` | List and filter vendors |
+| GET | `/api/vendors/{vendor_id}` | Retrieve vendor details and related records |
+| GET | `/api/vendors/graph/data` | Generate vendor graph data |
+
+**Cryptocurrency**
+
+| Method | Endpoint | Purpose |
+|---|---|---|
+| GET | `/api/crypto/wallets` | List wallet records |
+| GET | `/api/crypto/wallet/{address}` | Retrieve wallet details and analysis |
+| GET | `/api/crypto/flow/{address}` | Build a wallet fund-flow graph |
+| GET | `/api/crypto/transactions` | List transaction records |
+| GET | `/api/crypto/risk/{address}` | Retrieve the configured wallet risk assessment |
+
+**Evidence**
+
+| Method | Endpoint | Purpose |
+|---|---|---|
+| GET | `/api/evidence` | List evidence records |
+| POST | `/api/evidence/capture` | Capture an evidence record |
+| POST | `/api/evidence/verify/{evidence_id}` | Verify an evidence record |
+| GET | `/api/evidence/dossier/{vendor_id}` | Generate a vendor-related dossier |
+
+**Watchlist**
+
+| Method | Endpoint | Purpose |
+|---|---|---|
+| GET | `/api/watchlist` | List watchlist entries |
+| POST | `/api/watchlist` | Add a watchlist entry |
+| DELETE | `/api/watchlist/{watchlist_id}` | Remove a watchlist entry |
+
+**Slang**
+
+| Method | Endpoint | Purpose |
+|---|---|---|
+| GET | `/api/slang/drift` | Review slang drift records and status |
+| POST | `/api/slang/analyze` | Run slang analysis |
+| GET | `/api/slang/lexicon` | Retrieve the configured lexicon |
+
+## Data, Privacy, and Limitations
+
+- **Demo data only.** The project ships with synthetic data and a local SQLite database. Review all records before publishing or sharing the repository.
+- **No sensitive data in version control.** Never commit real personal data, confidential case information, credentials, API keys, or private evidence.
+- **Leads, not proof.** Treat model scores, slang matches, entity links, and wallet risk outputs as investigative leads only. Entity matches can be coincidental, and text can be ambiguous.
+- **Limited data scope.** Wallet analysis operates solely on data available to the application.
+- **Integrity vs. authenticity.** Hash verification can detect modification but does not prove authenticity or legal admissibility.
+- **Not a forensic standard.** The prototype does not replace validated forensic procedures, legal review, or human investigation.
+- **Lawful use.** Restrict access and use only lawfully obtained data in authorized testing or deployment.
+
+## Roadmap
+
+The following are proposed enhancements, not implemented features.
+
+- [ ] Maintained `requirements.txt` and automated test suite
+- [ ] Authentication, role-based authorization, and audit logging
+- [ ] Improved model evaluation on governed, representative datasets
+- [ ] Explainability details and clear confidence/uncertainty reporting
+- [ ] Richer evidence metadata, timestamps, and auditable custody events
+- [ ] Integration with verified data providers, where authorized
+- [ ] Database migrations, backup procedures, and deployment hardening
+- [ ] Dashboard screenshots and a reproducible demo walkthrough
+
+## Contributing
+
+Contributions, bug reports, and suggestions are welcome.
+
+1. Fork the repository and create a feature branch.
+2. Make your changes and document their purpose.
+3. Test the affected functionality.
+4. Open a pull request with a clear description.
+
+## License
+
+No license has been specified for this project. Add a `LICENSE` file (for example, MIT or Apache-2.0) and update this section accordingly.
