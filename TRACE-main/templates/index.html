@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRACE — Darknet & Encrypted Platform Drug Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10"/>
+                    <circle cx="12" cy="12" r="6"/>
+                    <circle cx="12" cy="12" r="2"/>
+                    <line x1="12" y1="2" x2="12" y2="5"/>
+                    <line x1="12" y1="19" x2="12" y2="22"/>
+                    <line x1="2" y1="12" x2="5" y2="12"/>
+                    <line x1="19" y1="12" x2="22" y2="12"/>
+                </svg>
+                <span class="logo-text">TRACE</span>
+            </div>
+            <span class="logo-sub">Drug Intelligence Platform</span>
+        </div>
+
+        <div class="nav-section">
+            <span class="nav-label">Operations</span>
+            <a href="#" class="nav-item active" data-view="dashboard">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="nav-item" data-view="feed">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                <span>Live Feed</span>
+            </a>
+            <a href="#" class="nav-item" data-view="vendors">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <span>Vendors</span>
+            </a>
+        </div>
+
+        <div class="nav-section">
+            <span class="nav-label">Intelligence</span>
+            <a href="#" class="nav-item" data-view="crypto">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                <span>Crypto Tracing</span>
+            </a>
+            <a href="#" class="nav-item" data-view="evidence">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                <span>Evidence Locker</span>
+            </a>
+            <a href="#" class="nav-item" data-view="slang">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                <span>Slang Engine</span>
+            </a>
+        </div>
+
+        <div class="nav-section">
+            <span class="nav-label">System</span>
+            <a href="#" class="nav-item" data-view="settings">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                <span>Watchlist</span>
+            </a>
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="status-dot"></div>
+            <span>v1.0 — Chandigarh Police Hackathon 2026</span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Top Bar -->
+        <header id="topbar">
+            <div class="topbar-left">
+                <h1 id="view-title">Dashboard</h1>
+                <span id="view-subtitle" class="topbar-subtitle">System Overview</span>
+            </div>
+            <div class="topbar-right">
+                <div class="search-box">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="text" id="global-search" placeholder="Search vendors, wallets, listings...">
+                </div>
+                <div class="alert-badge" id="alert-badge" onclick="navigateTo('feed')">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    <span class="badge-count" id="badge-count">0</span>
+                </div>
+                <div class="topbar-time" id="topbar-time"></div>
+            </div>
+        </header>
+
+        <!-- Views -->
+        <div id="view-dashboard" class="view active">
+            <div class="stats-row" id="stats-cards"></div>
+            <div class="grid-2col">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>Detection Trends</h3>
+                        <span class="panel-badge">7 DAYS</span>
+                    </div>
+                    <div class="panel-body chart-container">
+                        <canvas id="chart-trends"></canvas>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>Alert Distribution</h3>
+                        <span class="panel-badge">ALL TIME</span>
+                    </div>
+                    <div class="panel-body chart-container">
+                        <canvas id="chart-alerts"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="panel" style="margin-top:16px">
+                <div class="panel-header">
+                    <h3>Recent Alerts</h3>
+                    <button class="btn-sm" onclick="navigateTo('feed')">View All →</button>
+                </div>
+                <div class="panel-body" id="recent-alerts"></div>
+            </div>
+        </div>
+
+        <div id="view-feed" class="view">
+            <div class="feed-controls">
+                <div class="filter-group">
+                    <label>Source</label>
+                    <select id="filter-source">
+                        <option value="">All Sources</option>
+                        <option value="telegram">Telegram</option>
+                        <option value="darknet">Darknet</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Min Score</label>
+                    <input type="range" id="filter-score" min="0" max="100" value="0">
+                    <span id="filter-score-val">0.00</span>
+                </div>
+                <div class="filter-group">
+                    <label></label>
+                    <button class="btn-primary" onclick="loadFeed()">Apply Filters</button>
+                </div>
+            </div>
+            <div class="table-container" id="feed-table"></div>
+        </div>
+
+        <div id="view-vendors" class="view">
+            <div class="grid-2col">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>Vendor Network Graph</h3>
+                        <span class="panel-badge">INTERACTIVE</span>
+                    </div>
+                    <div class="panel-body">
+                        <div id="vendor-graph" style="height:400px;background:#0a0e17;border-radius:4px;"></div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>Top Vendors by Risk</h3>
+                    </div>
+                    <div class="panel-body scrollable" id="vendor-list"></div>
+                </div>
+            </div>
+            <div class="panel" style="margin-top:16px">
+                <div class="panel-header">
+                    <h3>Vendor Details</h3>
+                </div>
+                <div class="panel-body" id="vendor-detail">
+                    <div class="empty-state">Select a vendor to view details</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="view-crypto" class="view">
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>Wallet Fund Flow</h3>
+                    <div class="crypto-search">
+                        <input type="text" id="crypto-search-input" placeholder="Enter wallet address...">
+                        <button class="btn-primary" onclick="traceWallet()">Trace</button>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div id="crypto-flow-graph" style="height:400px;background:#0a0e17;border-radius:4px;"></div>
+                </div>
+            </div>
+            <div class="grid-2col" style="margin-top:16px">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>Tracked Wallets</h3>
+                    </div>
+                    <div class="panel-body scrollable" id="wallet-list"></div>
+                </div>
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>Recent Transactions</h3>
+                    </div>
+                    <div class="panel-body scrollable" id="tx-list"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="view-evidence" class="view">
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>Evidence Locker</h3>
+                    <span class="panel-badge">CHAIN-OF-CUSTODY VERIFIED</span>
+                </div>
+                <div class="panel-body" id="evidence-list"></div>
+            </div>
+            <div class="grid-2col" style="margin-top:16px">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>Generate NDPS Dossier</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="dossier-controls">
+                            <select id="dossier-vendor-select">
+                                <option value="">Select a vendor...</option>
+                            </select>
+                            <button class="btn-primary" onclick="generateDossier()">Generate Report</button>
+                        </div>
+                        <pre id="dossier-output" class="dossier-preview"></pre>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>Manual Evidence Capture</h3>
+                    </div>
+                    <div class="panel-body">
+                        <textarea id="evidence-content" placeholder="Paste listing text, chat export, or notes to capture as evidence..." rows="6"></textarea>
+                        <button class="btn-primary" style="margin-top:8px" onclick="captureEvidence()">Capture & Hash</button>
+                        <div id="capture-result" class="capture-result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="view-slang" class="view">
+            <div class="grid-2col">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>Slang Analysis Engine</h3>
+                        <span class="panel-badge">HINGLISH / PUNJABI / ENGLISH</span>
+                    </div>
+                    <div class="panel-body">
+                        <textarea id="slang-input" placeholder="Type or paste text in Hinglish/Punjabi/English to analyze for drug slang indicators..." rows="5"></textarea>
+                        <button class="btn-primary" style="margin-top:8px" onclick="analyzeSlang()">Analyze Text</button>
+                        <div id="slang-result" class="slang-result"></div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>Slang Drift Detector</h3>
+                        <span class="panel-badge">AUTO-LEARNING</span>
+                    </div>
+                    <div class="panel-body scrollable" id="slang-drift-list"></div>
+                </div>
+            </div>
+            <div class="panel" style="margin-top:16px">
+                <div class="panel-header">
+                    <h3>Lexicon Overview</h3>
+                </div>
+                <div class="panel-body" id="lexicon-stats"></div>
+            </div>
+        </div>
+
+        <div id="view-settings" class="view">
+            <div class="grid-2col">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>Watchlist Management</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="watchlist-add">
+                            <input type="text" id="watchlist-keyword" placeholder="Add keyword to watch...">
+                            <select id="watchlist-severity">
+                                <option value="info">Info</option>
+                                <option value="warning" selected>Warning</option>
+                                <option value="critical">Critical</option>
+                            </select>
+                            <button class="btn-primary" onclick="addWatchlist()">Add</button>
+                        </div>
+                        <div id="watchlist-items" class="watchlist-items"></div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>System Info</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="sys-info">
+                            <div class="sys-row"><span>Platform</span><span>TRACE v1.0</span></div>
+                            <div class="sys-row"><span>Database</span><span>SQLite</span></div>
+                            <div class="sys-row"><span>Slang Lexicon</span><span id="sys-slang-count">—</span></div>
+                            <div class="sys-row"><span>Emoji Patterns</span><span id="sys-emoji-count">—</span></div>
+                            <div class="sys-row"><span>Location Regions</span><span id="sys-region-count">—</span></div>
+                            <div class="sys-row"><span>Server</span><span>FastAPI + Uvicorn</span></div>
+                            <div class="sys-row"><span>Origin</span><span>Chandigarh Police Hackathon 2026</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

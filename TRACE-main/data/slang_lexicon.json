@@ -1,0 +1,219 @@
+{
+  "version": "3.0.0",
+  "description": "TRACE Drug Slang Lexicon v3 — Sourced from DEA (2018), NCBI/Surgeon General (2016), Times of India Chandigarh (2019), recovered.org, and Indian drug research. 600+ terms.",
+  "sources": {
+    "DEA_Drug_Slang_2018": "US Drug Enforcement Administration comprehensive drug slang code words list",
+    "NCBI_Surgeon_General_2016": "Facing Addiction in America — Appendix D drug street names",
+    "Times_of_India_Chandigarh_2019": "Chandigarh/Punjab drug slang compiled by TOI from local doctors and psychiatrists",
+    "Recovered_org": "Modern drug slang comprehensive database",
+    "Indian_Drug_Research_Images": "Indian street slang tables covering cannabis, charas, opium, synthetics, psychedelics, prescription abuse"
+  },
+  "substances": {
+    "cannabis": {
+      "hindi": ["ganja", "bhang", "charas", "phukka", "chillum", "batti", "soka", "tadiya", "maal", "samaan", "gandhi", "baba", "ped", "patti", "chilam"],
+      "punjabi": ["bhaang", "chilam", "sunti", "phook", "ganja", "sigs", "sulfa", "sheela"],
+      "english": ["cannabis", "marijuana", "weed", "pot", "kush", "haze", "chronic", "loud", "herb", "grass", "dope", "green", "mary jane", "blunt", "joint", "spliff", "baggie", "bud", "flower", "ressha", "stick", "420", "skunk", "purple haze", "puff", "score", "stuff", "greens", "phuk", "j", "og", "hydro", "desi", "hybrid", "mango", "idukki gold", "mysore mango", "shillong", "manipuri", "dabs"],
+      "hinglish": ["weed mil rhi", "ganja available", "maal hai kya", "charas milega", "bhang piya", "phook ke baat", "maal ready hai", "green maal", "fresh maal", "desi maal", "stock aaya", "maal aaya hai"]
+    },
+    "charas_hashish": {
+      "hindi": ["charas", "sulfa", "cream", "rub", "batti", "black", "kali", "patti", "rassi", "atta"],
+      "punjabi": ["malana cream", "tosh", "kasol", "manali cream", "charas"],
+      "english": ["hash", "hashish", "sulfa", "cream", "malana cream", "tosh", "kasol", "manali cream", "rub", "black", "kali", "patti", "rassi", "atta", "chocolate", "slate", "clay"]
+    },
+    "cocaine": {
+      "hindi": ["coke", "safed powder", "chitta", "safed", "white", "powder"],
+      "english": ["cocaine", "coke", "snow", "blow", "nose candy", "powder", "line", "bump", "crack", "rock", "freebase", "white powder", "sniff", "777", "a-1", "angel powder", "angie", "audi", "aunt nora", "azucar", "baby powder", "barrato", "basuco", "bazooka", "beach", "c", "candy", "charlie", "flake", "toot", "dust", "rail", "yayo", "perico"],
+      "hinglish": ["coke available", "snow mil rha", "white maal", "safed maal", "coke hai kya", "coke milega"]
+    },
+    "mdma": {
+      "hindi": ["goli", "ecstasy", "extacy", "party pill", "tikki"],
+      "english": ["mdma", "molly", "ecstasy", "extasy", "mandy", "pingu", "rolls", "beans", "pressies", "molly", "methyl", "e", "eve", "adam", "love drug", "mercedes", "x", "pingers", "happy pill", "disco biscuits", "xtc", "white magic", "bouncing powder", "md"],
+      "hinglish": ["goli mil jayegi", "ecstasy available", "mdma hai kya", "party pills", "molly available", "mdma milega"]
+    },
+    "methamphetamine": {
+      "hindi": ["ice", "crystal", "tukdi", "tukda"],
+      "english": ["methamphetamine", "amphetamine", "ice", "crystal", "meth", "crystal meth", "speed", "shard", "glass", "tina", "crystal", "white crystal", "clear", "pure crystal", "amp", "crank", "blue", "chalk", "chicken feed", "shatter", "super ice", "tweak", "drone", "meow meow", "m-cat", "mephedrone"],
+      "hinglish": ["ice available", "crystal mil rha", "crystal meth hai", "ice hai kya", "crystal ready hai"]
+    },
+    "heroin": {
+      "hindi": ["afeem", "afeem ka paani", "brown sugar", "chitta", "opium", "doda", "posta"],
+      "english": ["heroin", "opium", "smack", "horse", "junk", "black tar", "china white", "brown sugar", "dope", "H", "poppy", "raw", "big h", "dragon", "scag", "skag", "mud", "black", "kalla", "kaali", "black gold", "ras"],
+      "hinglish": ["afeem mil jayegi", "brown sugar available", "dope hai kya", "afeem hai kya"]
+    },
+    "opium_poppy": {
+      "hindi": ["afeem", "amal", "posta", "doda", "khaskhas", "bhuki", "kalla", "kaali"],
+      "english": ["opium", "afeem", "amal", "posta", "doda", "khaskhas", "bhuki", "kalla", "kaali", "black gold", "ras", "poppy husk", "poppy straw", "poppy seed"]
+    },
+    "lsd": {
+      "hindi": ["blotter", "acid"],
+      "english": ["lsd", "acid", "blotter", "tabs", "microdot", "gel tab", "window pane", "trip", "paper", "strip", "california sunshine", "looney tunes", "lucy", "l", "dots", "blue moon", "yellow sunshine", "stamp", "drop", "trips", "lucy in the sky"],
+      "hinglish": ["acid available", "blotter mil rha", "trip chahti", "lsd hai kya", "blotter ready hai"]
+    },
+    "psychedelics": {
+      "english": ["shrooms", "magic mushrooms", "alice", "buttons", "cubes", "gods flesh", "liberty caps", "mushies", "psilly billy", "stemmies", "tweezes", "psilocybin", "kodaikanal", "kodai", "magic mush", "caps", "dmt", "dimitri", "aya", "yage", "ayahuasca", "mescaline", "peyote", "big chief", "cactus", "halfmoon", "mescal", "mescapade", "moon", "shaman", "pcp", "angel dust", "rocket fuel", "ozone", "ashy larry", "blue whack", "blue star", "dipper", "elephant tranquilizer", "purple rain", "zombie"]
+    },
+    "pharmaceutical": {
+      "hindi": ["dawaai", "goli", "tablets", "nasha", "nasha ki goli"],
+      "english": ["alprazolam", "oxycodone", "xanax", "benzos", "valium", "percs", "oxy", "codeine", "tramadol", "adderall", "ritalin", "morphine", "fentanyl", "vicodin", "ambien", "subutex", "suboxone", "pills", "tablets", "bars", "percs", "roxy", "hydro", "norco", "diazepam", "clonazepam", "zolpidem", "oxycotton", "o", "oc", "hillbilly heroin", "roxies", "bean", "blues", "buttons", "kickers", "zannies", "xanies", "footballs", "upjohns", "yellow boys", "bricks", "k-pin", "roofies", "vallies", "downers", "tranks", "corex", "phensedyl", "toseina", "buprenorphine", "norphin", "lean", "cough syrup"],
+      "hinglish": ["dawaai mil jayegi", "pills available", "codeine hai", "xanax milega", "nasha ki goli", "goli mil jayegi", "tablet available"]
+    },
+    "fentanyl": {
+      "english": ["fentanyl", "fent", "tango", "f", "fenty", "tnt", "china town", "china white", "apache", "cash", "goodfella", "dance fever"]
+    },
+    "ketamine": {
+      "english": ["ketamine", "ket", "special k", "vitamin k", "wonky", "cat food", "jet", "donkey", "kit kat", "k-hole", "kodai"]
+    },
+    "synthetic": {
+      "hindi": ["naya maal", "chemical"],
+      "english": ["spice", "k2", "bath salts", "flakka", "synthetics", "n-bomb", "2cb", "salvia", "ghb", "poppers", "mephedrone", "meow", "drone", "m-cat", "galaxy gas", "whippets", "nitrous", "air blast", "huff", "laughing gas", "snappers", "duster"],
+      "hinglish": ["naya maal aaya", "synthetic available", "chemical hai kya", "new maal"]
+    },
+    "prescription_abuse": {
+      "english": ["corex", "phensedyl", "toseina", "codeine", "lean", "cough syrup", "buprenorphine", "norphin", "td", "dxm", "dextromorphan", "robitussin"]
+    }
+  },
+  "emoji_mappings": {
+    "🌿": {"substance": "cannabis", "confidence": 0.90, "contexts": ["weed", "ganja", "herb", "green", "leaf", "maaal"]},
+    "🍃": {"substance": "cannabis", "confidence": 0.85, "contexts": ["leaves", "weed", "natural"]},
+    "🌸": {"substance": "cannabis", "confidence": 0.80, "contexts": ["weed", "ganja", "flower"]},
+    "❄️": {"substance": "cocaine", "confidence": 0.90, "contexts": ["snow", "white", "coke", "powder", "chitta"]},
+    "🧊": {"substance": "methamphetamine", "confidence": 0.90, "contexts": ["ice", "crystal", "meth"]},
+    "🍫": {"substance": "charas_hashish", "confidence": 0.85, "contexts": ["hash", "charas", "chocolate", "cream"]},
+    "💊": {"substance": "pharmaceutical", "confidence": 0.80, "contexts": ["pills", "tablets", "capsules", "dawaai", "mdma"]},
+    "💉": {"substance": "heroin", "confidence": 0.85, "contexts": ["inject", "needle", "shot", "heroin"]},
+    "🍄": {"substance": "psychedelics", "confidence": 0.90, "contexts": ["shrooms", "mushrooms", "psilocybin"]},
+    "🔌": {"substance": "dealer", "confidence": 0.90, "contexts": ["plug", "dealer", "source", "connect"]},
+    "🚀": {"substance": "trip", "confidence": 0.70, "contexts": ["high", "trip", "launch"]},
+    "✈️": {"substance": "trip", "confidence": 0.65, "contexts": ["high", "trip", "travel"]},
+    "📦": {"substance": "delivery", "confidence": 0.75, "contexts": ["package", "parcel", "delivery", "shipping", "drop"]},
+    "🎒": {"substance": "delivery", "confidence": 0.70, "contexts": ["delivery", "drop", "package"]},
+    "💎": {"substance": "premium", "confidence": 0.65, "contexts": ["premium", "quality", "pure", "top"]},
+    "🔥": {"substance": "hot_new", "confidence": 0.55, "contexts": ["new", "hot", "fire", "best"]},
+    "⚡": {"substance": "quality", "confidence": 0.60, "contexts": ["fast", "premium", "strong", "powerful"]},
+    "🧪": {"substance": "tested", "confidence": 0.75, "contexts": ["lab tested", "tested", "pure"]},
+    "📸": {"substance": "proof", "confidence": 0.40, "contexts": ["check photos", "see pics", "verify"]},
+    "🤫": {"substance": "discreet", "confidence": 0.65, "contexts": ["discreet", "quiet", "secret", "private"]},
+    "📲": {"substance": "contact", "confidence": 0.55, "contexts": ["dm", "message", "contact", "call"]},
+    "💰": {"substance": "price", "confidence": 0.50, "contexts": ["price", "cost", "money", "payment"]},
+    "🔒": {"substance": "secure", "confidence": 0.60, "contexts": ["secure", "encrypted", "safe", "escrow"]}
+  },
+  "transaction_terms": {
+    "hindi": ["dm karo", "price baat", "negotiable", "bulk mein", "chhota packet", "bada order", "stock hai", "delivery kare", "pan india", "discreet packing", "prepaid", "cod", "crypto", "bitcoin", "usdt", "wallet", "escrow", "rate fixed", "rate bol", "jaldi order", "time nahi hai", "cash on delivery", "on tick", "copping", "scoring"],
+    "punjabi": ["karo dm", "price gal", "bulk vich", "chhota packet", "bada order", "stock ae", "delivery karange", "pan india", "discreet", "prepaid", "cod", "rate daso", "jaldi kar"],
+    "english": ["dm for price", "price negotiable", "bulk available", "discreet packaging", "pan india delivery", "cash on delivery", "crypto accepted", "usdt only", "btc only", "escrow available", "tested and pure", "lab verified", "for sale", "selling", "available for", "ready to ship", "same day delivery", "worldwide shipping", "stealth shipping", "pgp encrypted", "dead drop", "vacuum sealed", "flipping", "serving", "copping", "scoring", "on tick"]
+  },
+  "location_terms": {
+    "chandigarh": ["chandigarh", "chd", "sector", "chd local", "tricity"],
+    "mohali": ["mohali", "mhl", "sahibzada ajit singh nagar"],
+    "panchkula": ["panchkula", "pkl", "punchkula"],
+    "punjab": ["punjab", "pb", "amritsar", "ludhiana", "jalandhar", "patiala", "bathinda", "hoshiarpur"],
+    "haryana": ["haryana", "hr", "gurgaon", "faridabad", "hisar", "karnal", "panipat"],
+    "delhi": ["delhi", "dl", "new delhi", "noida", "ghaziabad", "dwarka", "rohini"],
+    "mumbai": ["mumbai", "bombay", "thane", "navi mumbai"],
+    "bangalore": ["bangalore", "bengaluru", "blr"],
+    "goa": ["goa", "panjim", "mapusa", "calangute", "anjuna"],
+    "himachal": ["himachal", "hp", "kasol", "tosh", "manali", "kullu", "dharamshala"],
+    "kodai": ["kodaikanal", "kodai"],
+    "other": ["pan india", "all india", "india wide", "nationwide"]
+  },
+  "quantity_terms": {
+    "small": ["1g", "2g", "5g", "gram", "tola", "pudiya", "potli", "packet", "pudi", "chhota packet", "quarter", "half", "bump", "gangster"],
+    "medium": ["10g", "25g", "50g", "half kg", "pav", "aadha", "500g", "finger", "pencil", "eight-ball"],
+    "large": ["100g", "250g", "kilo", "kg", "1kg", "bora", "bulk", "wholesale", "truck load", "brick", "loki", "pillow", "square", "loaf", "zip"],
+    "units": ["batti", "piece", "tablet", "goli", "strip", "blister", "patti", "tab", "bars"]
+  },
+  "dealer_terms": {
+    "english": ["dealer", "plug", "source", "hookup", "mule", "cooker", "mailman", "medicine man", "pusher", "supplier", "distributor", "connection", "banda", "aadmi"],
+    "hinglish": ["plug hai", "apna plug", "connected", "source hai", "seedha source", "direct source", "apna banda", "contact hai", "connection hai", "setup hai", "line hai", "lineup hai", "connect hai", "apna aadmi", "banda set hai"]
+  },
+  "drug_mixtures": {
+    "english": ["speedball", "candyflipping", "kitty flipping", "space", "birria", "facebook", "domex", "love flip", "love trip", "takeover", "goofball"]
+  },
+  "weights_slang": {
+    "english": ["bump", "gangster", "finger", "pencil", "brick", "loki", "pillow", "square", "seven", "seventh", "eightball", "loaf", "small tire", "zip", "bowl", "california roll", "notebook"]
+  },
+  "leetspeak_obfuscation": {
+    "patterns": ["ch1tta", "g@nja", "m44l", "m.d", "coke_", "c.h.a.r.a.s", "w33d", "m30w", "h3r01n", "m3th", "l5d", "mdm@", "xc7@cy", "krystal", "ph@rm@"]
+
+  },
+  "contextual_phrases": {
+    "drug_availability": [
+      "available hai", "mil jayega", "milega", "mil rha hai", "mil rahi hai",
+      "stock mein hai", "ready hai", "aaya hai", "aa gaya hai", "aagya hai",
+      "ready hai bhai", "mil sakta hai", "ho jayega", "done hai", "set hai",
+      "available bro", "ready bro", "stock hai", "stock ready",
+      "packet ready hai", "maal ready hai", "stock ready hai",
+      "aaja", "aaja bhai", "aa ja", "le aa", "le aaja",
+      "getting high", "doing a line", "hitting the slopes", "chasing the dragon"
+    ],
+    "drug_inquiry": [
+      "hai kya", "kya hai", "kya milta hai", "kya available hai",
+      "kitne ka hai", "rate kya hai", "price kya hai", "rate batao",
+      "kitna hai", "kya rate hai", "price bolo", "kitne mein hai",
+      "kya chal raha hai", "kya scene hai"
+    ],
+    "drug_slang_hindi": [
+      "bhai maal", "maal hai", "maal de", "maal chahiye", "maal ready",
+      "maal aaya", "maal aagya", "maal mila", "maal pack", "maal fresh",
+      "packet hai", "packet ready", "packet aaya", "packet de",
+      "jaldi bhej", "jaldi de", "fatafat", "abhi chahiye", "turant",
+      "bhai bhej", "bhai de", "bhai kitna", "bhai rate",
+      "bhaiya maal", "bhaiya packet", "bhaiya ready",
+      "le ja", "le ja bhai", "bhej de", "bhej bhai",
+      "bas done", "theek hai", "ok done", "set hai bhai",
+      "le lo", "utha lo", "utha le", "cop karo", "score karo"
+    ],
+    "drug交易_context": [
+      "fresh stock", "new stock", "stock aaya", "stock hai", "stock ready",
+      "fresh maal", "new maal", "fresh supply", "new supply",
+      "fresh batch", "new batch", "stock available", "supply available",
+      "ready hai", "packet ready", "maal ready", "stock ready hai",
+      "aagya maal", "maal aagya", "stock aagya", "supply aagya",
+      "full packet ready", "packet full hai", "stock full hai",
+      "cash payment", "cash only", "cash on delivery", "on tick"
+    ],
+    "dealer_terms": [
+      "plug", "plug hai", "apna plug", "connected", "source hai",
+      "seedha source", "direct source", "apna banda", "contact hai",
+      "connection hai", "setup hai", "line hai", "lineup hai",
+      "connect hai", "apna aadmi", "banda set hai",
+      "hookup", "mule", "cooker", "mailman"
+    ],
+    "drug_use_actions": [
+      "getting high", "doing a line", "hitting the slopes",
+      "chopping", "racking up", "chasing", "slamming", "huffing",
+      "smoking", "snorting", "injecting", "swallowing",
+      "pop a pill", "take a hit", "take a bump", "do a line"
+    ]
+  },
+  "darknet_patterns": [
+    "ships worldwide", "stealth shipping", "lab tested", "pgp encrypted",
+    "escrow supported", "positive feedback", "% positive", "minimum order",
+    "vacuum-sealed", "dead drop", "discrete shipping", "first class",
+    "tracked shipping", "express delivery", "vendor rating",
+    "product description", "quantity available", "bulk pricing",
+    "payment methods", "wallet address", "btc address", "monero accepted",
+    "onion url", "tor link", ".onion", "marketplace listing"
+  ],
+  "indicators": {
+    "high_confidence": [
+      "dm karo for price", "bulk available pan india", "discreet packaging",
+      "crypto accepted", "lab tested pure", "stock available", "delivery pan india",
+      "prepaid only", "usdt accepted", "escrow available", "fresh stock",
+      "stock aaya hai", "maal ready", "packet ready", "new batch",
+      "fresh supply", "supply aayi hai", "ready stock",
+      "stealth shipping", "pgp encrypted", "dead drop",
+      "vacuum sealed", "worldwide shipping"
+    ],
+    "medium_confidence": [
+      "price negotiable", "quality product", "premium grade", "tested",
+      "clean stuff", "original product", "genuine quality", "for sale",
+      "available for sale", "selling now", "ready to deliver",
+      "same day delivery", "copping", "scoring", "flipping"
+    ],
+    "low_confidence": [
+      "available", "in stock", "contact for details", "check profile",
+      "visit channel", "check our channel", "stock update"
+    ]
+  }
+}
